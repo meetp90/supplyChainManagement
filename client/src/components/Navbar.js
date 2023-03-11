@@ -95,115 +95,116 @@ export default function PersistentDrawerLeft({
   };
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            <img
-              alt="."
-              src="/logo.png"
-              style={{ height: "45px", width: "auto" }}
-            />
-            &nbsp;SupplyChain-Dapp
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <ListItemText>
-            <b>{pageTitle}</b>
-          </ListItemText>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon style={{ color: "#fff" }} />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </div>
-        <List>
-          <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
-            <ListItem>
-              <ListItemText>Home</ListItemText>
-            </ListItem>
-          </Link>
-          <Link
-            to="/explorer"
-            style={{ textDecoration: "none", color: "#fff" }}
-          >
-            <ListItem>
-              <ListItemText>Explorer</ListItemText>
-            </ListItem>
-          </Link>
-        </List>
-        <List>
-          {navItems.length !== 0 ? (
-            navItems.map((item) => (
-              <Link
-                to={item[1]}
-                style={{ textDecoration: "none", color: "#fff" }}
-              >
-                <ListItem button key={item[0]}>
-                  <ListItemText primary={item[0]} />
-                </ListItem>
-              </Link>
-            ))
-          ) : (
-            <> </>
-          )}
-        </List>
-        <div
-          style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
-        >
-          <div
-            style={{
-              width: "100%",
-              height: "70px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontWeight: 500,
-              fontSize: 17,
-              borderTop: "1px solid #44a",
-            }}
-          ></div>
-        </div>
-      </Drawer>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-        <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
-      </main>
-    </div>
+    // <div className={classes.root}>
+    //   <CssBaseline />
+    //   <AppBar
+    //     position="fixed"
+    //     className={clsx(classes.appBar, {
+    //       [classes.appBarShift]: open,
+    //     })}
+    //   >
+    //     <Toolbar>
+    //       <IconButton
+    //         color="inherit"
+    //         aria-label="open drawer"
+    //         onClick={handleDrawerOpen}
+    //         edge="start"
+    //         className={clsx(classes.menuButton, open && classes.hide)}
+    //       >
+    //         <MenuIcon />
+    //       </IconButton>
+    //       <Typography
+    //         variant="h6"
+    //         noWrap
+    //         style={{ display: "flex", alignItems: "center" }}
+    //       >
+    //         <img
+    //           alt="."
+    //           src="/logo.png"
+    //           style={{ height: "45px", width: "auto" }}
+    //         />
+    //         &nbsp;SupplyChain-Dapp
+    //       </Typography>
+    //     </Toolbar>
+    //   </AppBar>
+    //   <Drawer
+    //     className={classes.drawer}
+    //     variant="persistent"
+    //     anchor="left"
+    //     open={open}
+    //     classes={{
+    //       paper: classes.drawerPaper,
+    //     }}
+    //   >
+    //     <div className={classes.drawerHeader}>
+    //     <ListItemText><b>{pageTitle}</b></ListItemText>
+    //       <IconButton onClick={handleDrawerClose}>
+    //         {theme.direction === "ltr" ? (
+    //           <ChevronLeftIcon style={{ color: "#fff" }} />
+    //         ) : (
+    //           <ChevronRightIcon />
+    //         )}
+    //       </IconButton>
+    //     </div>
+    //     <List>
+    //       <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
+    //         <ListItem>
+    //           <ListItemText>Home</ListItemText>
+    //         </ListItem>
+    //       </Link>
+    //       <Link
+    //         to="/explorer"
+    //         style={{ textDecoration: "none", color: "#fff" }}
+    //       >
+    //         <ListItem>
+    //           <ListItemText>Explorer</ListItemText>
+    //         </ListItem>
+    //       </Link>
+    //     </List>
+    //     <List>
+    //       {navItems.length !== 0 ? (
+    //         navItems.map((item) => (
+    //           <Link
+    //             to={item[1]}
+    //             style={{ textDecoration: "none", color: "#fff" }}
+    //           >
+    //             <ListItem button key={item[0]}>
+    //               <ListItemText primary={item[0]} />
+    //             </ListItem>
+    //           </Link>
+    //         ))
+    //       ) : (
+    //         <> </>
+    //       )}
+    //     </List>
+    //     <div
+    //       style={{ height: "100%", display: "flex", alignItems: "flex-end" }}
+    //     >
+    //       <div
+    //         style={{
+    //           width: "100%",
+    //           height: "70px",
+    //           display: "flex",
+    //           justifyContent: "center",
+    //           alignItems: "center",
+    //           fontWeight: 500,
+    //           fontSize: 17,
+    //           borderTop: "1px solid #44a",
+    //         }}
+    //       >
+    //       </div>
+    //     </div>
+    //   </Drawer>
+    //   <main
+    //     className={clsx(classes.content, {
+    //       [classes.contentShift]: open,
+    //     })}
+    //   >
+    //     <div className={classes.drawerHeader} />
+    //     <div style={{ margin: "0 auto", maxWidth: 1300 }}>{children}</div>
+    //   </main>
+    // </div>
+
+    <></>
   );
 }
